@@ -33,3 +33,13 @@ def test_health_endpoint():
 def test_invalid_route():
     response = client.get("/this-route-does-not-exist")
     assert response.status_code == 404
+
+def test_health_response_structure():
+    response = client.get("/health")
+
+    assert response.status_code == 200
+
+    data = response.json()
+
+    assert "status" in data
+    assert data["status"] == "healthy"
