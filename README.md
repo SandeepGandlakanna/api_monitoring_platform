@@ -1,7 +1,6 @@
 # API Monitoring & Observability Platform
 
-A full-stack API monitoring platform built with Python, FastAPI,
-SQLModel, SQLite, Streamlit, and Docker.
+A full-stack API monitoring platform built with Python, FastAPI, SQLModel, SQLite, Streamlit, and Docker.
 
 ## Features
 
@@ -55,7 +54,7 @@ SQLModel, SQLite, Streamlit, and Docker.
                                │
                     ┌──────────▼──────────┐
                     │      SQLModel       │
-                    │   Service Layer     │
+                    │    Service Layer    │
                     └──────────┬──────────┘
                                │
                                ▼
@@ -67,9 +66,14 @@ SQLModel, SQLite, Streamlit, and Docker.
                     Background Scheduler
                             │
                             ▼
-                    External API Endpoints
+                  External API Endpoints
                             │
                             ▼
-                    Check Results + Alert
+                 Check Results + Alerts
+### Environment Variables
 
+Create a `.env` file in the project root:
 
+```env
+SECRET_KEY=your-random-secret-key
+DATABASE_URL=sqlite:///monitoring.db

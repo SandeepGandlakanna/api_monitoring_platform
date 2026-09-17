@@ -1,10 +1,24 @@
 services:
   api:
     build: .
-    container_name: api-monitoring-platform
+    container_name: api-monitoring-api
     env_file:
       - .env
     ports:
       - "8000:8000"
     volumes:
       - ./monitoring.db:/app/monitoring.db
+
+  frontend:
+    build: .
+    container_name: api-monitoring-frontend
+    depends_on:
+      - api
+    ports:
+      - "8501:8501"
+    environment:
+      API_BASE_URL: http://api:8000
+    command: >
+      streamlit run frontend/app.py
+      --server.address=0.0.0.0
+      --server.port=8501
