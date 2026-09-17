@@ -70,4 +70,6 @@ SQLModel, SQLite, Streamlit, and Docker.
                     External API Endpoints
                             │
                             ▼
-                    Check Results + Alerts
+                    Check Results + Alert
+
+
