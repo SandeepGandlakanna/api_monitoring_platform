@@ -77,3 +77,18 @@ Create a `.env` file in the project root:
 ```env
 SECRET_KEY=your-random-secret-key
 DATABASE_URL=sqlite:///monitoring.db
+## Testing
+
+The project includes automated tests for:
+
+- Health and root endpoints
+- Authentication
+- Password hashing
+- JWT token generation and validation
+- Analytics with empty monitor history
+- Protected monitor endpoints
+
+Run the test suite with:
+
+```bash
+pytest
