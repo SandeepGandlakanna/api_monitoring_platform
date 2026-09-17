@@ -43,3 +43,8 @@ def test_health_response_structure():
 
     assert "status" in data
     assert data["status"] == "healthy"
+
+def test_monitors_requires_authentication():
+    response = client.get("/monitors/")
+
+    assert response.status_code == 401
