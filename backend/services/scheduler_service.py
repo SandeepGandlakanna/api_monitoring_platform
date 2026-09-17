@@ -16,9 +16,9 @@ def run_monitoring_loop():
                 )
             ).all()
 
-            current_time = datetime.utcnow()
+        current_time = datetime.utcnow()
 
-            for monitor in monitors:
+        for monitor in monitors:
 
                 if monitor.last_checked_at is not None:
 
