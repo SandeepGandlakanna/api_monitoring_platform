@@ -41,3 +41,9 @@ def test_jwt_token():
     result = verify_access_token(token)
 
     assert result == username
+
+def test_invalid_jwt_token():
+    import pytest
+
+    with pytest.raises(ValueError):
+        verify_access_token("invalid-token")
