@@ -1,0 +1,10 @@
+services:
+  api:
+    build: .
+    container_name: api-monitoring-platform
+    env_file:
+      - .env
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./monitoring.db:/app/monitoring.db

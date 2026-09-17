@@ -1,0 +1,15 @@
+fastapi
+uvicorn[standard]
+sqlmodel
+httpx
+python-jose[cryptography]
+passlib
+pwdlib[argon2]
+argon2-cffi
+python-multipart
+streamlit
+requests
+pandas
+plotly
+pytest
+python-dotenv
