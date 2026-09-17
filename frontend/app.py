@@ -1,10 +1,13 @@
+import os
 import requests
 import streamlit as st
 import pandas as pd
 import plotly.express as px
 
-
-API_BASE_URL = "http://127.0.0.1:8000"
+API_BASE_URL = os.getenv(
+    "API_BASE_URL",
+    "http://127.0.0.1:8000",
+)
 
 
 st.set_page_config(
@@ -367,7 +370,7 @@ if page == "Dashboard":
 
     st.dataframe(
         overview_df,
-        use_container_width=True,
+        width="stretch",
     )
 
     st.subheader("🚨 Alerts")
@@ -399,7 +402,7 @@ if page == "Dashboard":
 
             st.dataframe(
                 alerts_df,
-                use_container_width=True,
+                width="stretch",
             )
 
         else:
@@ -945,7 +948,7 @@ elif page == "Monitors":
 
                             st.plotly_chart(
                                 chart,
-                                use_container_width=True,
+                                width="stretch",
                             )
 
                         else:
