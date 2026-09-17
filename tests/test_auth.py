@@ -47,3 +47,21 @@ def test_invalid_jwt_token():
 
     with pytest.raises(ValueError):
         verify_access_token("invalid-token")
+
+def test_expired_jwt_token():
+    from datetime import datetime, timedelta, timezone
+    from jose import jwt
+    from backend.config import SECRET_KEY, ALGORITHM
+    import pytest
+
+    expired_token = jwt.encode(
+        {
+            "sub": "testuser",
+            "exp": datetime.now(timezone.utc) - timedelta(minutes=1),
+        },
+        SECRET_KEY,
+        algorithm=ALGORITHM,
+    )
+
+    with pytest.raises(ValueError):
+        verify_access_token(expired_token)
