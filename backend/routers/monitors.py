@@ -67,7 +67,7 @@ def create_monitor(
         monitor = Monitor(
             user_id=user.id,
             name=monitor_data.name,
-            url=monitor_data.url,
+            url=str(monitor_data.url),
             method=monitor_data.method,
             check_interval_seconds=monitor_data.check_interval_seconds,
         )
